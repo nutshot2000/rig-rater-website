@@ -1,0 +1,42 @@
+# Tech Reviews Website Rules
+# This file enforces constraints for the website development
+
+# Enforce allowed technologies only
+allowed_languages:
+  - html
+  - css
+  - javascript
+
+# Disallow these frameworks and libraries
+disallowed_frameworks:
+  - react
+  - angular
+  - vue
+  - bootstrap
+  - tailwind
+  - jquery
+
+# Design constraints
+design_requirements:
+  - Boxy card design with deep shadows (>= 8px)
+  - Rounded corners (12px)
+  - Hover lift effect (translateY -10px)
+  - Dark theme with PC Gamer inspired blue accents (#00aaff)
+  - Responsive grid layout (min card width 320px)
+  - Roboto font from Google Fonts
+
+# Feature constraints
+feature_requirements:
+  - Contact form must alert "Message sent!" on submission
+  - All affiliate links must open in new tabs
+  - Affiliate links must be logged for analytics
+  - Footer must include affiliate disclosure link
+  
+# No complex features
+disallowed_features:
+  - Backend logic
+  - Database integration
+  - User authentication
+  - Content management system
+  - Dynamic newsfeed
+  - Comment sections 
