@@ -1,3 +1,47 @@
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', () => { // Ensure DOM is loaded
+    const navToggle = document.querySelector('.nav-toggle');
+    const header = document.querySelector('header');
+
+    if (navToggle && header) {
+        navToggle.addEventListener('click', () => {
+            header.classList.toggle('nav-active'); // Toggle the class on the header
+
+            // Optional: Prevent body scroll when mobile menu is open
+            if (header.classList.contains('nav-active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Optional: Close menu if a navigation link is clicked
+        const navLinks = header.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (header.classList.contains('nav-active')) {
+                    header.classList.remove('nav-active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+        });
+
+        // Optional: Close menu if clicking outside the menu (on the overlay)
+        // This requires targeting the nav ul itself if it has the background
+        const navMenu = header.querySelector('nav ul');
+        if (navMenu) {
+            navMenu.addEventListener('click', (event) => {
+                 // Close only if the click is directly on the ul (the overlay background)
+                 // not on a link inside it.
+                if (event.target === navMenu && header.classList.contains('nav-active')) {
+                     header.classList.remove('nav-active');
+                     document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+        }
+    }
+});
+
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Contact form handling
@@ -112,13 +156,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to log affiliate link clicks
 function logAffiliateClick(platform, product) {
-    console.log(`Affiliate link clicked: Platform=${platform}, Product=${product}`);
     if (typeof gtag === 'function') {
         gtag('event', 'affiliate_link_click', {
             'event_category': 'Affiliate Links',
             'event_label': `${platform} - ${product}`,
-            'value': 1 // Optional: Assign a value if needed
+            'value': 1 // Optional: Assign a value if desired
         });
+    } else {
+        console.log('gtag not defined, skipping affiliate click log for:', platform, product);
     }
 }
 

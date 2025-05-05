@@ -996,5 +996,136 @@ nav ul li a,
 }
 
 #backToTopBtn:hover {
-    background-color: #0088cc; /* Darker blue on hover */
+    background-color: var(--primary-hover);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ============================ */
+/* Mobile Navigation Styles     */
+/* ============================ */
+
+/* Navigation Toggle Button */
+.nav-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute; /* Position relative to header .container */
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100; /* Above nav links */
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: background-color 0s 0.1s linear; /* Delay hiding the middle bar for X */
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    /* Transition timings for X animation */
+    transition: transform 0.2s ease-in-out, top 0.2s 0.2s ease-in-out;
+}
+
+.hamburger::before {
+    top: -8px; /* Position lines above/below */
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Mobile Navigation Styles (Applied below 768px) */
+@media (max-width: 768px) {
+    /* Show the toggle button */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Style the nav list for mobile */
+    header nav ul {
+        position: fixed;
+        top: 0; /* Align to top */
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        background-color: rgba(30, 30, 30, 0.98); /* Dark background with slight transparency */
+        backdrop-filter: blur(5px); /* Optional: Blur content behind */
+        flex-direction: column; /* Stack links vertically */
+        justify-content: center; /* Center links vertically */
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        transform: translateX(100%); /* Start off-screen to the right */
+        transition: transform 0.3s ease-in-out; /* Smooth slide transition */
+        pointer-events: none; /* Prevent interaction when hidden */
+        z-index: 1050; /* Below toggle, above rest of header */
+        overflow-y: auto; /* Allow scrolling if many links */
+    }
+
+    header nav ul li {
+        margin: 0; /* Remove desktop margin */
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        font-size: 22px; /* Larger font size for touch */
+        font-weight: 500;
+        padding: 18px 20px; /* Generous padding */
+        display: block; /* Make links take full width */
+        width: 100%;
+        border-bottom: 1px solid var(--background-lighter); /* Separator */
+        transform: none; /* Reset hover transform */
+    }
+     header nav ul li:last-child a {
+        border-bottom: none; /* Remove border from last item */
+    }
+    header nav ul li a:hover {
+         background-color: var(--primary-color-translucent); /* Subtle hover */
+         color: var(--text-color); /* Keep text color consistent */
+         transform: none;
+    }
+
+    header nav ul li a.active::before {
+        display: none; /* Hide the desktop active indicator dot */
+    }
+
+    /* Styles when mobile nav is active (toggled by JS) */
+    header.nav-active nav ul {
+        transform: translateX(0); /* Slide menu in */
+        pointer-events: auto; /* Enable interaction */
+    }
+
+    /* Animate Hamburger Button to an 'X' */
+     header.nav-active .hamburger {
+        background-color: transparent; /* Hide middle bar */
+        transition: background-color 0s; /* Apply instantly */
+    }
+
+    header.nav-active .hamburger::before {
+        top: 0; /* Move line to center */
+        transform: rotate(45deg); /* Rotate */
+        transition: top 0.2s ease-in-out, transform 0.2s 0.2s ease-in-out; /* Animation timing */
+    }
+
+     header.nav-active .hamburger::after {
+        top: 0; /* Move line to center */
+        transform: rotate(-45deg); /* Rotate other way */
+         transition: top 0.2s ease-in-out, transform 0.2s 0.2s ease-in-out; /* Animation timing */
+    }
 } 
