@@ -108,4 +108,58 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-}); 
+});
+
+// Function to log affiliate link clicks
+function logAffiliateClick(platform, product) {
+    console.log(`Affiliate link clicked: Platform=${platform}, Product=${product}`);
+    if (typeof gtag === 'function') {
+        gtag('event', 'affiliate_link_click', {
+            'event_category': 'Affiliate Links',
+            'event_label': `${platform} - ${product}`,
+            'value': 1 // Optional: Assign a value if needed
+        });
+    }
+}
+
+// Back to Top Button Logic
+// Get the button
+let mybutton = document.getElementById("backToTopBtn");
+
+// When the user scrolls down 200px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (mybutton) { // Check if button exists before trying to style it
+        mybutton.style.display = "block";
+        mybutton.style.opacity = "1";
+        mybutton.style.visibility = "visible";
+    }
+  } else {
+    if (mybutton) {
+        // Start fade out
+        mybutton.style.opacity = "0";
+        // Use timeout to set display none after fade out transition completes
+        setTimeout(() => {
+            if (mybutton.style.opacity === "0") { // Double check opacity hasn't changed
+                 mybutton.style.visibility = "hidden";
+                 mybutton.style.display = "none";
+            }
+        }, 500); // Match the transition duration in CSS
+    }
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document smoothly
+function topFunction() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+// Add event listener if the button exists
+if (mybutton) {
+    mybutton.addEventListener("click", topFunction);
+} 

@@ -40,7 +40,39 @@
 
     <main>
         <div class="container">
-            <h2 class="section-title">All Reviews</h2>
+            <h2 class="section-title">All Hardware Reviews</h2>
+
+            <!-- Intro Text -->
+            <p class="reviews-intro">Welcome to the Rig Rater hardware archives! Dive into our detailed reviews covering everything you need to build or upgrade your PC. Use the links below to jump to a specific category.</p>
+
+            <!-- Category Links -->
+            <div class="category-links" style="margin-bottom: 40px; text-align: center;">
+                <a href="#cpus">CPUs</a> |
+                <a href="#gpus">GPUs</a> |
+                <a href="#motherboards">Motherboards</a> |
+                <a href="#cooling">CPU Coolers</a> |
+                <a href="#storage">Storage</a> |
+                <a href="#monitors">Monitors</a> |
+                <a href="#peripherals">Peripherals</a>
+            </div>
+
+            <!-- CPUs Section -->
+            <h3 id="cpus" class="category-title">Processors (CPUs)</h3>
+            <div class="card-grid">
+                <article class="card">
+                    <div class="card-image">
+                        <img src="images/9800x3d.jpg" alt="AMD Ryzen 7 9800X3D Box">
+                    </div>
+                    <div class="card-content">
+                        <h3>AMD Ryzen 7 9800X3D Review</h3>
+                        <p>The king of gaming CPUs reviewed. See how Zen 5 and 3D V-Cache dominate.</p>
+                        <a href="ryzen-7-9800x3d-review.html" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- GPUs Section -->
+            <h3 id="gpus" class="category-title">Graphics Cards (GPUs)</h3>
             <div class="card-grid">
                 <article class="card">
                     <div class="card-image">
@@ -52,7 +84,6 @@
                         <a href="intel-arc-b580-review.html" class="read-more">Read More</a>
                     </div>
                 </article>
-
                 <article class="card">
                     <div class="card-image">
                         <img src="images/budget-gpu.jpg" alt="Best Budget GPU for 2025">
@@ -63,18 +94,6 @@
                         <a href="budget-gpu-2025.html" class="read-more">Read More</a>
                     </div>
                 </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/9800x3d.jpg" alt="AMD Ryzen 7 9800X3D Box">
-                    </div>
-                    <div class="card-content">
-                        <h3>AMD Ryzen 7 9800X3D Review</h3>
-                        <p>The king of gaming CPUs reviewed. See how Zen 5 and 3D V-Cache dominate.</p>
-                        <a href="ryzen-7-9800x3d-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-
                 <article class="card">
                     <div class="card-image">
                         <img src="images/rtx5090.jpg" alt="NVIDIA RTX 5090 Graphics Card">
@@ -85,7 +104,11 @@
                         <a href="rtx-5090-review.html" class="read-more">Read More</a>
                     </div>
                 </article>
+            </div>
 
+            <!-- Motherboards Section -->
+            <h3 id="motherboards" class="category-title">Motherboards</h3>
+            <div class="card-grid">
                 <article class="card">
                     <div class="card-image">
                         <img src="images/mobo.png" alt="Best Motherboards">
@@ -96,7 +119,11 @@
                         <a href="motherboards-review.html" class="read-more">Read More</a>
                     </div>
                 </article>
+            </div>
 
+            <!-- CPU Coolers Section -->
+            <h3 id="cooling" class="category-title">CPU Coolers</h3>
+            <div class="card-grid">
                 <article class="card">
                     <div class="card-image">
                         <img src="images/cooler.jpg" alt="CPU Cooler">
@@ -107,18 +134,11 @@
                         <a href="cpu-coolers-review.html" class="read-more">Read More</a>
                     </div>
                 </article>
+            </div>
 
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/moniter.jpg" alt="Gaming Monitor">
-                    </div>
-                    <div class="card-content">
-                        <h3>Gaming Monitors Worth Your Money</h3>
-                        <p>Key considerations for gaming monitors, including refresh rates, response times, and display technologies.</p>
-                        <a href="gaming-monitors-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-
+            <!-- Storage Section -->
+            <h3 id="storage" class="category-title">Storage (SSDs)</h3>
+            <div class="card-grid">
                 <article class="card">
                     <div class="card-image">
                         <img src="images/samsung9100pro.jpg" alt="Samsung 9100 Pro SSD">
@@ -129,8 +149,27 @@
                         <a href="ssds-review.html" class="read-more">Read More</a>
                     </div>
                 </article>
+            </div>
 
+            <!-- Monitors Section -->
+            <h3 id="monitors" class="category-title">Monitors</h3>
+            <div class="card-grid">
                 <article class="card">
+                    <div class="card-image">
+                        <img src="images/moniter.jpg" alt="Gaming Monitor">
+                    </div>
+                    <div class="card-content">
+                        <h3>Gaming Monitors Worth Your Money</h3>
+                        <p>Key considerations for gaming monitors, including refresh rates, response times, and display technologies.</p>
+                        <a href="gaming-monitors-review.html" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Peripherals Section -->
+            <h3 id="peripherals" class="category-title">Peripherals (Mice, Keyboards, Headsets)</h3>
+            <div class="card-grid">
+                 <article class="card">
                     <div class="card-image">
                         <img src="images/mouse.jpg" alt="Gaming Mouse">
                     </div>
@@ -140,7 +179,6 @@
                         <a href="gaming-mice-review.html" class="read-more">Read More</a>
                     </div>
                 </article>
-
                 <article class="card">
                     <div class="card-image">
                         <img src="images/keyboardmech.jpg" alt="Mechanical Keyboard">
@@ -151,7 +189,6 @@
                         <a href="keyboards-review.html" class="read-more">Read More</a>
                     </div>
                 </article>
-
                 <article class="card">
                     <div class="card-image">
                         <img src="images/headset.jpg" alt="Premium Gaming Headset">
@@ -162,23 +199,12 @@
                         <a href="headsets-review.html" class="read-more">Read More</a>
                     </div>
                 </article>
-
-                <!-- New Card for Gaming Chairs -->
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/gaming-seats.jpg" alt="Awesome Gaming Chairs">
-                    </div>
-                    <div class="card-content">
-                        <h3>Awesome Gaming Chairs (2025)</h3>
-                        <p>Find the perfect throne for your gaming setup with our review of five awesome chairs.</p>
-                        <a href="gaming-chairs-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                <!-- End New Card -->
-
             </div>
         </div>
     </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" title="Go to top">↑</button>
 
     <footer>
         <div class="container">
