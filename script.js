@@ -169,7 +169,7 @@ function logAffiliateClick(platform, product) {
 
 // Back to Top Button Logic
 // Get the button
-let mybutton = document.getElementById("backToTopBtn");
+let mybutton = document.getElementById("back-to-top");
 
 // When the user scrolls down 200px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -208,3 +208,11 @@ function topFunction() {
 if (mybutton) {
     mybutton.addEventListener("click", topFunction);
 } 
+
+// Dynamically update copyright year
+document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+}); 

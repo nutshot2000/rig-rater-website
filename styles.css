@@ -564,10 +564,17 @@ main {
 
 .product-specs ul li {
     color: var(--text-muted);
+    margin-bottom: 0.3rem;
+}
+
+/* Added for specific image sizing */
+.product-image img.smaller-product-image {
+    max-height: 210px; /* Adjust this value as needed */
+    object-fit: contain; /* Ensures the image scales nicely within the new height */
 }
 
 .product-description p {
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .pros-cons {
@@ -972,32 +979,41 @@ nav ul li a,
 }
 
 .back-link a:hover {
-    color: #ddd;
-    text-decoration: underline;
+    background-color: var(--primary-hover);
 }
 
 /* Back to Top Button */
-#backToTopBtn {
-    display: none; /* Hidden by default */
+#back-to-top { /* Changed ID from #backToTopBtn */
+    display: none; /* Hidden by default, JS will manage display */
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #00aaff; /* PC Gamer blue accent */
+    z-index: 1001; /* Ensure it's above other content but below modals if any */
+    background-color: var(--primary-color);
     color: white;
+    border: none;
+    border-radius: 50%; /* Make it circular */
     cursor: pointer;
-    padding: 12px 15px;
-    border-radius: 10px; /* Slightly less rounded than cards */
-    font-size: 18px;
-    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 0; /* Remove padding if using width/height for sizing */
+    width: 50px; /* Increased size */
+    height: 50px; /* Increased size */
+    font-size: 24px; /* Increased arrow size */
+    line-height: 50px; /* Center arrow vertically */
+    text-align: center; /* Center arrow horizontally */
+    box-shadow: var(--shadow-medium);
+    opacity: 0; /* Start fully transparent for JS fade-in */
+    visibility: hidden; /* Start hidden for JS fade-in */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, background-color var(--transition-speed);
 }
 
-#backToTopBtn:hover {
+#back-to-top:hover {
     background-color: var(--primary-hover);
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-large);
+}
+
+#back-to-top:focus {
+    outline: 2px solid var(--primary-hover);
+    outline-offset: 3px;
 }
 
 /* ============================ */
