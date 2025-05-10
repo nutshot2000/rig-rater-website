@@ -1,4 +1,8 @@
 /* Base Styles */
+html { /* Added for smooth scrolling */
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary-color: #0095dd;
     --primary-hover: #0077b3;
@@ -52,7 +56,7 @@ a:hover {
     color: var(--primary-hover);
 }
 
-a:focus {
+a:focus-visible {
     outline: 2px solid var(--primary-hover);
     outline-offset: 2px;
     border-radius: 2px;
@@ -149,14 +153,11 @@ nav ul li a {
 }
 
 nav ul li a:hover,
-nav ul li a:focus {
+nav ul li a:focus-visible {
     color: var(--primary-color);
     border-bottom-color: var(--primary-color);
-    outline: none;
-}
-
-nav ul li a:focus {
     background-color: rgba(0, 149, 221, 0.2);
+    outline: none;
 }
 
 nav ul li a.active {
@@ -288,12 +289,12 @@ main {
 }
 
 .card:hover .read-more,
-.read-more:focus {
+.read-more:focus-visible {
     color: var(--primary-hover);
 }
 
 .card:hover .read-more::after,
-.read-more:focus::after {
+.read-more:focus-visible::after {
     opacity: 1;
     right: -8px;
     color: var(--primary-hover);
@@ -323,7 +324,7 @@ main {
     box-shadow: 0 6px 12px rgba(0, 170, 255, 0.3);
 }
 
-.buy-button:focus {
+.buy-button:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 149, 221, 0.4), 0 6px 12px rgba(0, 170, 255, 0.3);
 }
@@ -340,7 +341,7 @@ main {
     transform: translateY(-2px);
 }
 
-.buy-button.secondary:focus {
+.buy-button.secondary:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 149, 221, 0.4);
     border-color: var(--primary-hover);
@@ -439,7 +440,7 @@ main {
     box-shadow: var(--shadow-medium);
 }
 
-.submit-button:focus {
+.submit-button:focus-visible {
     outline: none;
     box-shadow: var(--shadow-medium), 0 0 0 4px rgba(0, 149, 221, 0.5);
 }
@@ -685,7 +686,7 @@ main {
     text-decoration: underline;
 }
 
-.category-links a:focus {
+.category-links a:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 149, 221, 0.3);
     border-radius: 2px;
@@ -804,11 +805,11 @@ footer p {
 }
 
 /* Add focus style to logo link */
-.logo a:focus {
+.logo a:focus-visible {
     outline: none;
 }
 
-.logo a:focus img {
+.logo a:focus-visible img {
     outline: 2px solid var(--primary-hover);
     outline-offset: 2px;
     border-radius: 2px;
@@ -918,7 +919,7 @@ nav ul li a,
     box-shadow: var(--shadow-large);
 }
 
-.hero-button:focus {
+.hero-button:focus-visible {
     outline: none;
     box-shadow: var(--shadow-large), 0 0 0 4px rgba(0, 149, 221, 0.5);
 }
@@ -962,7 +963,7 @@ nav ul li a,
     transform: translateY(-2px);
 }
 
-.social-share-links a:focus {
+.social-share-links a:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 149, 221, 0.4);
     background-color: var(--primary-color);
@@ -997,7 +998,7 @@ nav ul li a,
     color: #33bbff; /* Slightly lighter blue on hover */
 }
 
-.social-link:focus {
+.social-link:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 149, 221, 0.4);
     /* Preserve hover effects on focus for consistency */
@@ -1062,7 +1063,7 @@ nav ul li a,
     box-shadow: var(--shadow-large);
 }
 
-#back-to-top:focus {
+#back-to-top:focus-visible {
     outline: none; /* Remove previous outline */
     box-shadow: 0 0 0 3px rgba(0, 149, 221, 0.5), var(--shadow-large); /* Added box-shadow for focus, kept large shadow for depth */
 }
@@ -1085,7 +1086,7 @@ nav ul li a,
     z-index: 1100; /* Above nav links */
 }
 
-.nav-toggle:focus {
+.nav-toggle:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 149, 221, 0.4);
     border-radius: 4px; /* Optional: to make the shadow match button shape if it's rounded */
@@ -1219,8 +1220,8 @@ nav ul li a,
   transform: scale(1.15);
 }
 
-#dark-mode-toggle:focus {
-  box-shadow: 0 0 0 3px rgba(0, 149, 221, 0.4);
+#dark-mode-toggle:focus-visible {
+  box-shadow: 0 0 0 3px var(--primary-color-translucent);
 }
 
 /* Light mode styles */

@@ -152,6 +152,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    initializeDarkMode(); // Initialize dark mode
 });
 
 // Function to log affiliate link clicks
@@ -215,4 +217,37 @@ document.addEventListener('DOMContentLoaded', function() {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
-}); 
+});
+
+// Dark Mode Toggle Logic
+// Function to apply the theme (dark/light)
+function applyTheme(isDark) {
+    document.body.classList.toggle('light-mode', !isDark);
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    if (toggleBtn) {
+        toggleBtn.textContent = isDark ? '🌙' : '☀️';
+        toggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+}
+
+// Function to initialize and handle dark mode
+function initializeDarkMode() {
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+
+    // Get preference from localStorage, default to dark (true)
+    let isDarkModePreferred = localStorage.getItem('darkMode') !== 'false'; // Default to true if 'darkMode' is null or 'true'
+
+    // Apply the theme as soon as the body is available or DOM is loaded
+    applyTheme(isDarkModePreferred);
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+            // Check current state by looking at the class on the body
+            const currentlyDark = !document.body.classList.contains('light-mode');
+            const newModeIsDark = !currentlyDark; // Toggle the mode
+
+            applyTheme(newModeIsDark);
+            localStorage.setItem('darkMode', String(newModeIsDark));
+        });
+    }
+} 
