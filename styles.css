@@ -858,6 +858,68 @@ footer p {
     margin-bottom: 25px;
 }
 
+/* Responsive Table Wrapper for Build Guides */
+.table-responsive-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1.5rem; /* Keep some space below the table */
+    -webkit-overflow-scrolling: touch; /* Optional: for smoother scrolling on iOS */
+}
+
+/* Build Table Styling (Applies to tables within the wrapper) */
+.build-table {
+    width: 100%; /* Make table try to fit, but it will scroll if min-width is exceeded */
+    min-width: 700px; /* Adjust as needed - forces horizontal scroll below this width */
+    border-collapse: collapse; /* Consistent border styling */
+    margin: 1em 0; /* Consistent margin */
+    background-color: var(--card-background); /* Match other tables/content blocks */
+    box-shadow: var(--shadow-small);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* For border-radius to apply to corners */
+}
+
+.build-table th, .build-table td {
+    border: 1px solid var(--background-lighter); /* Dark mode border */
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 0.9em; /* Slightly smaller font for tables */
+}
+
+.build-table th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.build-table tbody tr:nth-child(even) {
+    background-color: var(--background-darker);
+}
+
+.build-table tbody tr:hover {
+    background-color: #3a4a5a; /* Consistent hover */
+}
+
+/* Light mode for build-table */
+body.light-mode .build-table {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+}
+body.light-mode .build-table th,
+body.light-mode .build-table td {
+    border-color: #ddd; /* Lighter borders */
+    color: #333;
+}
+body.light-mode .build-table th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+body.light-mode .build-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+body.light-mode .build-table tbody tr:hover {
+    background-color: #eef6ff;
+}
+
 /* Slightly smoother transitions */
 * {
     transition-duration: 0.35s;
