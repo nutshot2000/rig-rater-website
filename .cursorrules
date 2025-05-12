@@ -15,6 +15,7 @@ disallowed_frameworks:
   - bootstrap
   - tailwind
   - jquery
+  # Swiper.js is allowed for carousels/galleries
 
 # Design constraints
 design_requirements:
@@ -43,5 +44,32 @@ disallowed_features:
 
 # File templates
 file_templates:
-  - file_glob: "**/*.html"
-    template_path: "rig-rater-website/cpu-coolers-review.html" 
+  - file_glob: "*-review.html" # Target new review pages
+    template_path: "rig-rater-website/cpu-coolers-review.html"
+    # New review pages should use the cpu-coolers-review.html template.
+    # The main product image section in new reviews should be a Swiper.js gallery
+    # similar to asus-rog-maximus-z890-apex-review.html, allowing for multiple images.
+    # Swiper CSS/JS should be included if not already present in the template.
+
+# General Context & Layout Preferences
+# This section provides general guidelines for content structure and library usage.
+context:
+  homepage_layout:
+    file_path: "rig-rater-website/index.html"
+    description: |
+      The homepage (index.html) should feature:
+      1. A Swiper.js carousel for the top 6 latest/featured reviews.
+         - Carousel should be configured with centeredSlides: true and loop.
+         - Swiper CSS/JS should be included.
+      2. A static grid of review cards below the carousel for the next 6 reviews.
+      3. Any reviews beyond these 12 should only appear on the main reviews.html page.
+  
+  image_galleries:
+    library: "Swiper.js"
+    description: |
+      For product review pages (e.g., *-review.html), if multiple images are available
+      for a product, they should be presented in a Swiper.js image gallery.
+      - Gallery should allow users to slide/click through images.
+      - Include navigation arrows and pagination dots.
+      - The gallery container should be constrained in width (e.g., max-width: 500px) and centered.
+      - Example implementation: asus-rog-maximus-z890-apex-review.html product gallery. 

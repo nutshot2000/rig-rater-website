@@ -71,6 +71,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMYLJJC72Q"></script>
     <script>
@@ -113,9 +115,28 @@
                 <h1 class="article-title">ASUS ROG Maximus Z890 Apex Review: Built for Breaking Records</h1>
                 <!-- Optional: Add article meta data -->
 
-                <!-- Featured Image -->
-                <div class="featured-image" style="text-align: center; margin-bottom: 20px;">
-                    <img src="images/optimized/asusrogz890apecmobo.jpg" alt="ASUS ROG Maximus Z890 Apex Motherboard" class="review-featured-image">
+                <!-- Swiper Image Gallery -->
+                <div class="swiper product-image-gallery">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <img src="images/optimized/asusrogz890apecmobo.jpg" alt="ASUS ROG Maximus Z890 Apex - Main View" class="review-featured-image" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+                        </div>
+                        <!-- Slide 2 (New Image) -->
+                        <div class="swiper-slide">
+                            <img src="images/optimized/asusrogz890apexstats.jpg" alt="ASUS ROG Maximus Z890 Apex - Cooling and Power Stages" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+                        </div>
+                        <!-- Add more slides here like this if you have more images:
+                        <div class="swiper-slide">
+                            <img src="images/optimized/your-image-2.jpg" alt="Alternative View" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+                        </div>
+                        -->
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
 
                 <div class="article-text">
@@ -201,7 +222,26 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <!-- Assuming script.js handles the dynamic year -->
+    <!-- <script async src="https://cdn.associates-amazon.com/oneLink/v2/sonic.js"></script> -->
+    <script src="script.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Product Image Gallery Swiper -->
+    <script>
+      var productImageSwiper = new Swiper('.product-image-gallery', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true, // Loop through images
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
 </body>
 </html> 

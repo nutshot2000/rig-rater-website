@@ -1476,4 +1476,29 @@ a:hover {
 
 .article-text a:hover {
     color: var(--link-hover-color); /* Change color on hover */
+}
+
+/* Light mode specific social share links */
+body.light-mode .social-share-links a {
+    background-color: #e0e0e0; /* Lighter gray background */
+    /* margin-bottom: 20px; /* This is now handled by the image margin */
+}
+
+/* Product Image Gallery (Swiper) Styling */
+.product-image-gallery {
+    max-width: 500px; /* Limit gallery width - Reduced from 700px */
+    margin: 0 auto 20px auto; /* Center the gallery and add margin below */
+    /* Ensure arrows/pagination are styled appropriately */
+    --swiper-navigation-color: var(--link-color); /* Use theme color for arrows */
+    --swiper-pagination-color: var(--link-color); /* Use theme color for dots */
+}
+
+/* General link styling */
+.article-text a {
+    color: var(--link-color); /* Use theme link color for links in article */
+    text-decoration: underline; /* Underline links in article text */
+}
+
+.article-text a:hover {
+    color: var(--link-hover-color); /* Change color on hover */
 } 
