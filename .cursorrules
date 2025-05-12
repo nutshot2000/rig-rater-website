@@ -40,3 +40,8 @@ disallowed_features:
   - Content management system
   - Dynamic newsfeed
   - Comment sections 
+
+# File templates
+file_templates:
+  - file_glob: "**/*.html"
+    template_path: "rig-rater-website/cpu-coolers-review.html" 

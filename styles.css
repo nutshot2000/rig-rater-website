@@ -1368,4 +1368,50 @@ body.light-mode .form-group label {
 
 body.light-mode .page-content h6 {
   color: #111111;
+}
+
+/* Add specific light mode styles for social share links */
+body.light-mode .social-share-links a {
+    background-color: #e0e0e0; /* Lighter gray background */
+    color: #333333; /* Darker text color */
+}
+
+body.light-mode .social-share-links a:hover {
+    background-color: #cccccc; /* Slightly darker gray on hover */
+    color: #000000; /* Black text on hover */
+}
+
+.review-featured-image {
+    display: block; /* Needed for margin auto to work */
+    max-width: 50%; /* Resize image to half its container width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+    border-radius: 8px; /* Keep the rounded corners */
+    margin-bottom: 20px; /* Add some space below the image */
+}
+
+/* Ensure the container div doesn't add extra centering if not needed */
+.featured-image {
+    text-align: inherit; /* Remove text-align: center if centering is handled by margin: auto */
+    /* margin-bottom: 20px; /* This is now handled by the image margin */
+}
+
+/* Make sure links within text don't get underlined by default */
+a {
+    text-decoration: none; /* Remove underline from all links */
+    color: inherit; /* Inherit color from parent, can be overridden specifically */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover for clarity */
+}
+
+/* Specific styles for article links if needed */
+.article-text a {
+    color: var(--link-color); /* Use theme link color for links in article */
+    text-decoration: underline; /* Underline links in article text */
+}
+
+.article-text a:hover {
+    color: var(--link-hover-color); /* Change color on hover */
 } 
