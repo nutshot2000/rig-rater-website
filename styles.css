@@ -1501,4 +1501,14 @@ body.light-mode .social-share-links a {
 
 .article-text a:hover {
     color: var(--link-hover-color); /* Change color on hover */
+}
+
+/* Swiper Styles */
+.category-swiper .swiper-slide {
+    height: auto; /* Allow slide height to adjust to content */
+}
+
+.category-swiper .card {
+    height: 100%; /* Ensure card fills the slide height */
+    margin-bottom: 20px; /* Add some space below cards if pagination/nav overlaps */
 } 

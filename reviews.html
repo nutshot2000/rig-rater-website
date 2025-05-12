@@ -26,6 +26,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMYLJJC72Q"></script>
     <script>
@@ -65,226 +67,348 @@
 
     <main>
         <div class="container">
-            <h2 class="section-title">All Hardware Reviews</h2>
-
-            <!-- Intro Text -->
-            <p class="reviews-intro">Welcome to the Rig Rater hardware archives! Dive into our detailed reviews covering everything you need to build or upgrade your PC. Use the links below to jump to a specific category.</p>
+            <h1 class="page-title">All Reviews</h1>
+            <p class="reviews-intro">Browse our latest hardware reviews by category. Click a category link below or scroll down to find what you need.</p>
 
             <!-- Category Links -->
-            <div class="category-links" style="margin-bottom: 40px; text-align: center;">
-                <a href="pc-build-guides.html">Build Guides</a> |
-                <a href="#cpus">CPUs</a> |
+            <div class="category-links">
+                <a href="#laptops">Laptops</a> |
+                <a href="#ram">RAM</a> |
                 <a href="#gpus">GPUs</a> |
+                <a href="#cpus">CPUs</a> |
                 <a href="#motherboards">Motherboards</a> |
-                <a href="#ram">Memory (RAM)</a> |
-                <a href="#cooling">CPU Coolers</a> |
-                <a href="#storage">Storage</a> |
+                <a href="#cpu-coolers">CPU Coolers</a> |
                 <a href="#monitors">Monitors</a> |
-                <a href="#peripherals">Peripherals</a> |
-                <a href="#psus">Power Supplies</a> |
-                <a href="#laptops">Laptops</a>
+                <a href="#ssds">SSDs</a> |
+                <a href="#mice">Mice</a> |
+                <a href="#headsets">Headsets</a> |
+                <a href="#keyboards">Keyboards</a> |
+                <a href="#psus">PSUs</a>
             </div>
 
             <!-- Laptops Section -->
-            <h3 id="laptops" class="category-title">Laptops</h3>
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/macbookairm4.jpg" alt="MacBook Air M4" loading="lazy">
+            <section id="laptops">
+                <h3 class="category-title">Laptops</h3>
+                <div class="swiper category-swiper laptop-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/macbookairm4.jpg" alt="MacBook Air M4" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>MacBook Air M4 & Pro M4 Review (2025)</h3>
+                                    <p>Apple's latest M4 MacBooks reviewed, focusing on the versatile Air and the powerful Pro. Is the M4 Air the new king?</p>
+                                    <a href="macbook-air-m4-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>MacBook Air M4 & Pro M4 Review (2025)</h3>
-                        <p>Apple's latest M4 MacBooks reviewed, focusing on the versatile Air and the powerful Pro. Is the M4 Air the new king?</p>
-                        <a href="macbook-air-m4-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
-            <!-- CPUs Section -->
-            <h3 id="cpus" class="category-title">Processors (CPUs)</h3>
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/9800x3d.jpg" alt="AMD Ryzen 7 9800X3D Box" loading="lazy">
+            <!-- RAM Section -->
+            <section id="ram">
+                <h3 class="category-title">RAM</h3>
+                 <div class="swiper category-swiper ram-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/dominatorddr5.jpg" alt="Corsair Dominator DDR5 RAM" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Best RAM for Gaming (DDR5) in 2025</h3>
+                                    <p>Unlock your PC's potential! Our guide to the fastest and best value DDR5 RAM kits for gaming in 2025.</p>
+                                    <a href="best-ram-2025-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>AMD Ryzen 7 9800X3D Review</h3>
-                        <p>The king of gaming CPUs reviewed. See how Zen 5 and 3D V-Cache dominate.</p>
-                        <a href="ryzen-7-9800x3d-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
             <!-- GPUs Section -->
-            <h3 id="gpus" class="category-title">Graphics Cards (GPUs)</h3>
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/arcb580.jpg" alt="Intel Arc B580 GPU" loading="lazy">
+            <section id="gpus">
+                <h3 class="category-title">GPUs</h3>
+                 <div class="swiper category-swiper gpu-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/arcb580.jpg" alt="Intel Arc B580 GPU" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Intel Arc B580 Review</h3>
+                                    <p>Intel's B580 targets the budget 1440p market with 12GB VRAM. Does Battlemage deliver killer value?</p>
+                                    <a href="intel-arc-b580-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
+                       <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/budget-gpu.jpg" alt="Best Budget GPU for 2025" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Best Budget GPU for 2025</h3>
+                                    <p>Explore top affordable graphics cards for 2025, balancing performance and value based on current specs and market trends.</p>
+                                    <a href="budget-gpu-2025.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
+                       <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/rtx5090.jpg" alt="NVIDIA RTX 5090 Graphics Card" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>NVIDIA RTX 5090 Review</h3>
+                                    <p>NVIDIA's new flagship, the RTX 5090, arrives with monstrous specs and DLSS 4. Is the performance king worth its hefty price tag?</p>
+                                    <a href="rtx-5090-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Intel Arc B580 Review</h3>
-                        <p>Intel's B580 targets the budget 1440p market with 12GB VRAM. Does Battlemage deliver killer value?</p>
-                        <a href="intel-arc-b580-review.html" class="read-more">Read More</a>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <!-- CPUs Section -->
+            <section id="cpus">
+                <h3 class="category-title">CPUs</h3>
+                 <div class="swiper category-swiper cpu-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/9800x3d.jpg" alt="AMD Ryzen 7 9800X3D Box" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>AMD Ryzen 7 9800X3D Review</h3>
+                                    <p>The king of gaming CPUs reviewed. See how Zen 5 and 3D V-Cache dominate.</p>
+                                    <a href="ryzen-7-9800x3d-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                </article>
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/budget-gpu.jpg" alt="Best Budget GPU for 2025" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Best Budget GPU for 2025</h3>
-                        <p>Explore top affordable graphics cards for 2025, balancing performance and value based on current specs and market trends.</p>
-                        <a href="budget-gpu-2025.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/rtx5090.jpg" alt="NVIDIA RTX 5090 Graphics Card" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>NVIDIA RTX 5090 Review</h3>
-                        <p>NVIDIA's new flagship, the RTX 5090, arrives with monstrous specs and DLSS 4. Is the performance king worth its hefty price tag?</p>
-                        <a href="rtx-5090-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
             <!-- Motherboards Section -->
-            <h3 id="motherboards" class="category-title">Motherboards</h3>
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/asusrogz890apecmobo.jpg" alt="ASUS ROG Maximus Z890 Apex Motherboard" loading="lazy">
+            <section id="motherboards">
+                <h3 class="category-title">Motherboards</h3>
+                 <div class="swiper category-swiper motherboard-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/mobo.jpg" alt="Best Motherboards" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Best Motherboard at Each Price Point</h3>
+                                    <p>A look at notable motherboards across different budget ranges, highlighting key features for various builds.</p>
+                                    <a href="motherboards-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                             <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/asusrogz890apecmobo.jpg" alt="ASUS ROG Maximus Z890 Apex Motherboard" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>ASUS ROG Maximus Z890 Apex Review</h3>
+                                    <p>An extreme OC board for Intel's next-gen CPUs and record-breaking DDR5 speeds.</p>
+                                    <a href="asus-rog-maximus-z890-apex-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>ASUS ROG Maximus Z890 Apex Review</h3>
-                        <p>An extreme OC board for Intel's next-gen CPUs and record-breaking DDR5 speeds.</p>
-                        <a href="asus-rog-maximus-z890-apex-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/mobo.jpg" alt="Best Motherboards" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Best Motherboard at Each Price Point</h3>
-                        <p>A look at notable motherboards across different budget ranges, highlighting key features for various builds.</p>
-                        <a href="motherboards-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Memory (RAM) Section -->
-            <h3 id="ram" class="category-title">Memory (RAM)</h3>
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/dominatorddr5.jpg" alt="Corsair Dominator Platinum DDR5 RAM Modules" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Best RAM for Gaming (DDR5) in 2025</h3>
-                        <p>Unlock your PC's potential! Our guide to the fastest and best value DDR5 RAM kits for gaming in 2025.</p>
-                        <a href="best-ram-2025-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
             <!-- CPU Coolers Section -->
-            <h3 id="cooling" class="category-title">CPU Coolers</h3>
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/cooler.jpg" alt="CPU Cooler" loading="lazy">
+            <section id="cpu-coolers">
+                <h3 class="category-title">CPU Coolers</h3>
+                 <div class="swiper category-swiper cpu-cooler-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/cooler.jpg" alt="CPU Cooler" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Top CPU Coolers of 2025</h3>
+                                    <p>Discover effective air and liquid CPU cooling solutions available today, focusing on specs and noise levels.</p>
+                                    <a href="cpu-coolers-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Top CPU Coolers of 2025</h3>
-                        <p>Discover effective air and liquid CPU cooling solutions available today, focusing on specs and noise levels.</p>
-                        <a href="cpu-coolers-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Storage Section -->
-            <h3 id="storage" class="category-title">Storage (SSDs)</h3>
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/samsung9100pro.jpg" alt="Samsung 9100 Pro SSD" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Fastest SSDs for Gaming</h3>
-                        <p>An overview of high-speed solid-state drives designed to reduce loading times in modern games.</p>
-                        <a href="ssds-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
             <!-- Monitors Section -->
-            <h3 id="monitors" class="category-title">Monitors</h3>
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/moniter.jpg" alt="Gaming Monitor" loading="lazy">
+            <section id="monitors">
+                <h3 class="category-title">Monitors</h3>
+                 <div class="swiper category-swiper monitor-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                             <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/moniter.jpg" alt="Gaming Monitor" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Gaming Monitors Worth Your Money</h3>
+                                    <p>Key considerations for gaming monitors, including refresh rates, response times, and display technologies.</p>
+                                    <a href="gaming-monitors-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Gaming Monitors Worth Your Money</h3>
-                        <p>Key considerations for gaming monitors, including refresh rates, response times, and display technologies.</p>
-                        <a href="gaming-monitors-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
-            <!-- Peripherals Section -->
-            <h3 id="peripherals" class="category-title">Peripherals (Mice, Keyboards, Headsets)</h3>
-            <div class="card-grid">
-                 <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/mouse.jpg" alt="Gaming Mouse" loading="lazy">
+            <!-- SSDs Section -->
+            <section id="ssds">
+                <h3 class="category-title">SSDs</h3>
+                 <div class="swiper category-swiper ssd-reviews-swiper">
+                    <div class="swiper-wrapper">
+                         <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/samsung9100pro.jpg" alt="Samsung 9100 Pro SSD" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Fastest SSDs for Gaming</h3>
+                                    <p>An overview of high-speed solid-state drives designed to reduce loading times in modern games.</p>
+                                    <a href="ssds-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Gaming Mice that Dominate</h3>
-                        <p>Comparing popular gaming mice, from lightweight FPS designs to feature-rich MMO controllers.</p>
-                        <a href="gaming-mice-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/keyboardmech.jpg" alt="Mechanical Keyboard" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Mechanical Keyboards Deep Dive</h3>
-                        <p>Explore the latest in mechanical keyboard technology, from switches to build quality.</p>
-                        <a href="keyboards-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/headset.jpg" alt="Premium Gaming Headset" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Premium Gaming Headsets</h3>
-                        <p>An overview of popular gaming headsets known for audio quality, microphone clarity, and comfort.</p>
-                        <a href="headsets-review.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
-            <!-- Power Supplies Section -->
-            <h3 id="psus" class="category-title">Power Supplies (PSUs)</h3>
-            <div class="card-grid">
-                 <article class="card">
-                    <div class="card-image">
-                        <img src="images/optimized/psucardimage.jpg" alt="ATX 3.0 Power Supply Unit" loading="lazy">
-                         <!-- NOTE: Use a relevant PSU image -->
+            <!-- Mice Section -->
+            <section id="mice">
+                <h3 class="category-title">Mice</h3>
+                 <div class="swiper category-swiper mice-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/mouse.jpg" alt="Gaming Mouse" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Gaming Mice that Dominate</h3>
+                                    <p>Comparing popular gaming mice, from lightweight FPS designs to feature-rich MMO controllers.</p>
+                                    <a href="gaming-mice-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Best PSUs for 2025 (ATX 3.0 Guide)</h3>
-                        <p>Power your rig reliably! Guide to the best ATX 3.0 PSUs with 12V-2x6 connectors for modern gaming PCs.</p>
-                        <a href="best-psu-2025-review.html" class="read-more">Read More</a>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <!-- Headsets Section -->
+            <section id="headsets">
+                <h3 class="category-title">Headsets</h3>
+                 <div class="swiper category-swiper headset-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                             <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/headset.jpg" alt="Premium Gaming Headset" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Premium Gaming Headsets</h3>
+                                    <p>An overview of popular gaming headsets known for audio quality, microphone clarity, and comfort.</p>
+                                    <a href="headsets-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                </article>
-            </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <!-- Keyboards Section -->
+            <section id="keyboards">
+                <h3 class="category-title">Keyboards</h3>
+                 <div class="swiper category-swiper keyboard-reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/keyboardmech.jpg" alt="Mechanical Keyboard" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Mechanical Keyboards Deep Dive</h3>
+                                    <p>Explore the latest in mechanical keyboard technology, from switches to build quality.</p>
+                                    <a href="keyboards-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <!-- PSUs Section -->
+            <section id="psus">
+                <h3 class="category-title">PSUs</h3>
+                 <div class="swiper category-swiper psu-reviews-swiper">
+                    <div class="swiper-wrapper">
+                         <div class="swiper-slide">
+                             <article class="card">
+                                <div class="card-image">
+                                    <img src="images/optimized/psucardimage.jpg" alt="ATX 3.0 Power Supply Unit" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3>Best PSUs for 2025 (ATX 3.0 Guide)</h3>
+                                    <p>Power your rig reliably! Guide to the best ATX 3.0 PSUs with 12V-2x6 connectors for modern gaming PCs.</p>
+                                    <a href="best-psu-2025-review.html" class="read-more">Read More</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
         </div>
     </main>
@@ -301,5 +425,51 @@
 
     <!-- <script async src="https://cdn.associates-amazon.com/oneLink/v2/sonic.js"></script> -->
     <script src="script.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Category Swipers -->
+    <script>
+      // Common Swiper options for category carousels
+      const categorySwiperOptions = {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: false, // No loop for category browsing
+        autoHeight: true, // Adjust wrapper height to active slide
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          600: { // Medium screens
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          900: { // Large screens
+            slidesPerView: 3,
+            spaceBetween: 30
+          }
+        }
+      };
+
+      // Initialize each category swiper
+      const laptopSwiper = new Swiper('.laptop-reviews-swiper', categorySwiperOptions);
+      const ramSwiper = new Swiper('.ram-reviews-swiper', categorySwiperOptions);
+      const gpuSwiper = new Swiper('.gpu-reviews-swiper', categorySwiperOptions);
+      const cpuSwiper = new Swiper('.cpu-reviews-swiper', categorySwiperOptions);
+      const motherboardSwiper = new Swiper('.motherboard-reviews-swiper', categorySwiperOptions);
+      const cpuCoolerSwiper = new Swiper('.cpu-cooler-reviews-swiper', categorySwiperOptions);
+      const monitorSwiper = new Swiper('.monitor-reviews-swiper', categorySwiperOptions);
+      const ssdSwiper = new Swiper('.ssd-reviews-swiper', categorySwiperOptions);
+      const miceSwiper = new Swiper('.mice-reviews-swiper', categorySwiperOptions);
+      const headsetSwiper = new Swiper('.headset-reviews-swiper', categorySwiperOptions);
+      const keyboardSwiper = new Swiper('.keyboard-reviews-swiper', categorySwiperOptions);
+      const psuSwiper = new Swiper('.psu-reviews-swiper', categorySwiperOptions);
+    </script>
+
 </body>
 </html> 
