@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (wasPlaying && savedTime !== null) {
             inspireAudio.currentTime = parseFloat(savedTime);
             inspireAudio.play().then(() => {
-                inspireButton.textContent = 'Inspiration Active! (Pause?)';
+                inspireButton.textContent = 'Inspiration Mode';
                 inspireButton.setAttribute('aria-label', 'Pause Inspiration Mode Music');
             }).catch(error => {
                 console.error("Audio play failed on load:", error);
@@ -283,18 +283,18 @@ document.addEventListener('DOMContentLoaded', () => {
         inspireButton.addEventListener('click', () => {
             if (inspireAudio.paused) {
                 inspireAudio.play().then(() => {
-                    inspireButton.textContent = 'Inspiration Active! (Pause?)';
+                    inspireButton.textContent = 'Inspiration Mode';
                     inspireButton.setAttribute('aria-label', 'Pause Inspiration Mode Music');
                     localStorage.setItem('rigRaterMusicPlaying', 'true'); // Explicitly set playing state
                 }).catch(error => {
                     console.error("Audio play failed on click:", error);
-                    inspireButton.textContent = 'Activate Inspiration Mode';
+                    inspireButton.textContent = 'Inspiration Mode';
                     inspireButton.setAttribute('aria-label', 'Activate Inspiration Mode Music');
                     localStorage.setItem('rigRaterMusicPlaying', 'false');
                 });
             } else {
                 inspireAudio.pause();
-                inspireButton.textContent = 'Activate Inspiration Mode';
+                inspireButton.textContent = 'Inspiration Mode';
                 inspireButton.setAttribute('aria-label', 'Activate Inspiration Mode Music');
                 localStorage.setItem('rigRaterMusicPlaying', 'false');
             }
