@@ -250,4 +250,98 @@ function initializeDarkMode() {
             localStorage.setItem('darkMode', String(newModeIsDark));
         });
     }
-} 
+}
+
+/* ============================ */
+/* Inspiration Music Player     */
+/* ============================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const inspireButton = document.getElementById('inspire-music-button');
+    const inspireAudio = document.getElementById('inspiration-audio');
+
+    if (inspireButton && inspireAudio) {
+        inspireAudio.preload = 'metadata';
+
+        // Check localStorage to resume playback
+        const savedTime = localStorage.getItem('rigRaterMusicTime');
+        const wasPlaying = localStorage.getItem('rigRaterMusicPlaying') === 'true';
+
+        if (wasPlaying && savedTime !== null) {
+            inspireAudio.currentTime = parseFloat(savedTime);
+            inspireAudio.play().then(() => {
+                inspireButton.textContent = 'Inspiration Active! (Pause?)';
+                inspireButton.setAttribute('aria-label', 'Pause Inspiration Mode Music');
+            }).catch(error => {
+                console.error("Audio play failed on load:", error);
+                // Clear stored state if play fails to prevent issues
+                localStorage.removeItem('rigRaterMusicTime');
+                localStorage.removeItem('rigRaterMusicPlaying');
+            });
+        }
+
+        inspireButton.addEventListener('click', () => {
+            if (inspireAudio.paused) {
+                inspireAudio.play().then(() => {
+                    inspireButton.textContent = 'Inspiration Active! (Pause?)';
+                    inspireButton.setAttribute('aria-label', 'Pause Inspiration Mode Music');
+                    localStorage.setItem('rigRaterMusicPlaying', 'true'); // Explicitly set playing state
+                }).catch(error => {
+                    console.error("Audio play failed on click:", error);
+                    inspireButton.textContent = 'Activate Inspiration Mode';
+                    inspireButton.setAttribute('aria-label', 'Activate Inspiration Mode Music');
+                    localStorage.setItem('rigRaterMusicPlaying', 'false');
+                });
+            } else {
+                inspireAudio.pause();
+                inspireButton.textContent = 'Activate Inspiration Mode';
+                inspireButton.setAttribute('aria-label', 'Activate Inspiration Mode Music');
+                localStorage.setItem('rigRaterMusicPlaying', 'false');
+            }
+        });
+
+        inspireAudio.addEventListener('ended', () => {
+            inspireButton.textContent = 'Be inspired, push this button';
+            inspireButton.setAttribute('aria-label', 'Play inspirational music');
+            localStorage.setItem('rigRaterMusicPlaying', 'false');
+            localStorage.removeItem('rigRaterMusicTime'); // Clear time when ended
+        });
+
+        // Save state when audio is paused or played
+        inspireAudio.addEventListener('pause', () => {
+            if (!inspireAudio.ended) { // Don't save time if it's because the audio ended
+                localStorage.setItem('rigRaterMusicTime', inspireAudio.currentTime.toString());
+            }
+            // If paused by user, the click handler above already sets rigRaterMusicPlaying to false.
+            // If paused due to page unload, beforeunload will handle it.
+        });
+
+        inspireAudio.addEventListener('play', () => {
+            localStorage.setItem('rigRaterMusicPlaying', 'true');
+        });
+        inspireAudio.addEventListener('playing', () => { // Fired after play starts or resumes
+            localStorage.setItem('rigRaterMusicPlaying', 'true');
+        });
+
+    }
+});
+
+// Save music state before the page unloads
+window.addEventListener('beforeunload', () => {
+    const inspireAudio = document.getElementById('inspiration-audio');
+    if (inspireAudio && !inspireAudio.paused) {
+        localStorage.setItem('rigRaterMusicTime', inspireAudio.currentTime.toString());
+        localStorage.setItem('rigRaterMusicPlaying', 'true');
+    } else if (inspireAudio && inspireAudio.paused) {
+        // If it's paused but there's a time, keep the time, but mark as not playing unless ended
+        if (localStorage.getItem('rigRaterMusicPlaying') !== 'false' && !inspireAudio.ended) {
+             // This case might be redundant if click/ended handlers are robust
+        }
+        // If explicitly paused by user, 'rigRaterMusicPlaying' is already 'false'.
+        // If it ended, 'rigRaterMusicPlaying' is 'false' and time is cleared.
+        // If it was never played or played and then paused, the state should reflect that.
+        // The primary goal of beforeunload is to catch playing audio.
+    }
+});
+
+// Function to initialize Swiper carousels 

@@ -113,7 +113,6 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -1511,4 +1510,26 @@ body.light-mode .social-share-links a {
 .category-swiper .card {
     height: 100%; /* Ensure card fills the slide height */
     margin-bottom: 20px; /* Add some space below cards if pagination/nav overlaps */
+}
+
+/* Button Styles */
+#inspire-music-button {
+    background-color: var(--primary-color); /* Prominent background */
+    color: var(--text-color); /* Text color that works on dark/light */
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: var(--shadow-medium);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin: 0 auto; /* Center the button using auto margins */
+    /* Removed other margin/display rules */
+}
+
+#inspire-music-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
 } 
