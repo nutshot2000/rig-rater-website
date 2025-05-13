@@ -298,6 +298,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 inspireButton.setAttribute('aria-label', 'Activate Inspiration Mode Music');
                 localStorage.setItem('rigRaterMusicPlaying', 'false');
             }
+
+            if (window.gtag) {
+                gtag('event', 'inspiration_mode_click', {
+                    'event_category': 'engagement',
+                    'event_label': 'Inspiration Mode Button'
+                });
+            }
         });
 
         inspireAudio.addEventListener('ended', () => {
