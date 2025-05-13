@@ -352,3 +352,43 @@ window.addEventListener('beforeunload', () => {
 });
 
 // Function to initialize Swiper carousels 
+
+/* ============================ */
+/* Share Bar Functionality      */
+/* ============================ */
+document.addEventListener('DOMContentLoaded', function() {
+    var copyBtns = document.querySelectorAll('.copy-link-btn');
+    copyBtns.forEach(function(copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                // Find the tooltip next to this button
+                var tooltip = copyBtn.parentElement.querySelector('.copy-tooltip');
+                if (tooltip) {
+                    tooltip.textContent = 'Link copied!';
+                    tooltip.classList.add('show-tooltip');
+                    setTimeout(() => {
+                        tooltip.classList.remove('show-tooltip');
+                    }, 1200);
+                }
+            });
+        });
+    });
+});
+
+// Share Bar: Dynamic Twitter Message
+// This will update the Twitter share link with a cool message
+// Homepage: general message, other pages: use page title
+
+document.addEventListener('DOMContentLoaded', function() {
+    var twitterBtn = document.querySelector('.share-bar-horizontal a[aria-label*="Twitter"]');
+    if (twitterBtn) {
+        var pageTitle = document.title;
+        var pageUrl = window.location.href;
+        var isHome = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+        var message = isHome
+            ? "Check out the best PC hardware reviews and guides at Rig Rater! 🚀"
+            : `Read my review: ${pageTitle} on Rig Rater! 🔥`;
+        var shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}&url=${encodeURIComponent(pageUrl)}`;
+        twitterBtn.setAttribute('href', shareUrl);
+    }
+}); 
